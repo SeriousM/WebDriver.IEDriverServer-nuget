@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>WebDriver.IEDriverServer.win32</id>
+        <version>2.34.0</version>
+        <authors>SeriousM</authors>
+        <owners>SeriousM</owners>
+        <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+        <projectUrl>https://github.com/SeriousM/WebDriver.IEDriverServer-nuget</projectUrl>
+        <iconUrl>https://ssl.gstatic.com/codesite/ph/images/defaultlogo.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>IEDriverServer.exe (win32) from https://code.google.com/p/selenium/downloads/list</description>
+        <releaseNotes>IEDriverServer executable as a NuGet package.</releaseNotes>
+        <copyright />
+        <language />
+        <tags>ie internet explorer IEDriverServer webdriver selenium</tags>
+    </metadata>
+</package>
