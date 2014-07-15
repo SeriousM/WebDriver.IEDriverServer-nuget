@@ -2,14 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>WebDriver.IEDriverServer.win64</id>
-        <version>2.34.0</version>
+        <version>2.42.0</version>
         <authors>SeriousM</authors>
         <owners>SeriousM</owners>
         <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
         <projectUrl>https://github.com/SeriousM/WebDriver.IEDriverServer-nuget</projectUrl>
         <iconUrl>https://ssl.gstatic.com/codesite/ph/images/defaultlogo.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>IEDriverServer.exe (win64) from https://code.google.com/p/selenium/downloads/list</description>
+        <description>IEDriverServer.exe (win64) from http://selenium-release.storage.googleapis.com/index.html. If you need an update, just drop me a line or create a pull request on github.com/SeriousM/WebDriver.IEDriverServer-nuget.</description>
         <releaseNotes>IEDriverServer executable as a NuGet package.</releaseNotes>
         <copyright />
         <language />
