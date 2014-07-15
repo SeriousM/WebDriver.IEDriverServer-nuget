@@ -1,3 +1,3 @@
-# IEDriverServer.exe win32
+# IEDriverServer.exe win32 / win64
 
-Binaries from https://code.google.com/p/selenium/downloads/list
+Binaries from http://selenium-release.storage.googleapis.com/index.html
