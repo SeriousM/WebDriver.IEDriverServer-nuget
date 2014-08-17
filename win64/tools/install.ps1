@@ -1,11 +1,24 @@
 param($installPath, $toolsPath, $package, $project)
 
-$file = Join-Path (Join-Path $toolsPath '..\content') 'IEDriverServer.exe' | Get-ChildItem
+$driverFile = "IEDriverServer.exe"
+$contentPath = Join-Path $installPath "content" 
+$driverPath = Join-Path $contentPath $driverFile
+$nupkgName = Split-Path $installPath -Leaf
 
-# because the IEDriverServer.exe is copied to the project root, we have to remove it and add a file-link again
-$project.ProjectItems.Item($file.Name).Delete()
+# remote the automatically added IEDriverServer.exe from the {packageRoot}\Deploy
+$project.ProjectItems.Item($driverFile).Delete()
+$project.Save()
 
-$project.ProjectItems.AddFromFile($file.FullName);
-$pi = $project.ProjectItems.Item($file.Name);
-$pi.Properties.Item("BuildAction").Value = [int]2;
-$pi.Properties.Item("CopyToOutputDirectory").Value = [int]2;
+# add IEDriverServer.exe as a file link
+# use the MSBuild API to access the xml dom of the csproj file 
+Add-Type -AssemblyName 'Microsoft.Build, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
+$projectXml = ([Microsoft.Build.Evaluation.ProjectCollection]::GlobalProjectCollection.GetLoadedProjects($project.FullName) | select -First 1).Xml
+$projectUri = [uri]$project.FullName;
+$drivertUri = [uri]$driverPath;
+$driverRelativePath = $projectUri.MakeRelative($drivertUri) -replace "/","\"
+
+$itemGrp = $projectXml.CreateItemGroupElement()
+$projectXml.AppendChild($itemGrp)
+$item = $itemGrp.AddItem("Content", $driverRelativePath)
+$item.AddMetadata("Link", $driverFile)
+$item.AddMetadata("CopyToOutputDirectory", "PreserveNewest")
