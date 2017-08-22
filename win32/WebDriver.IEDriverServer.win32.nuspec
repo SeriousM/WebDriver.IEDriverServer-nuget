@@ -2,7 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>WebDriver.IEDriverServer.win32</id>
+<<<<<<< HEAD
         <version>3.5.1</version>
+=======
+        <version>3.5.0</version>
+>>>>>>> refs/remotes/origin/master
         <authors>SeriousM</authors>
         <owners>SeriousM</owners>
         <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
