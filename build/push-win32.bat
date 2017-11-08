@@ -8,7 +8,7 @@ set /P APIKEY=Enter your Api Key from https://www.nuget.org/account/ApiKeys:
 
 if "%APIKEY%"=="" GOTO ERROR
 
-%NUGET% push %PWD%\..\%VERSION%\*.nupkg %APIKEY%
+%NUGET% push -source nuget.org %PWD%\..\%VERSION%\*.nupkg %APIKEY%
 GOTO END
 
 :ERROR
